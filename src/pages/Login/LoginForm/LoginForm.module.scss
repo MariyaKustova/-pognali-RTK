@@ -1,0 +1,18 @@
+.LoginForm {
+  display: flex;
+  flex-direction: column;
+
+  &__buttonWrapper {
+    display: flex;
+  }
+  
+  &__button {
+    width: fit-content;
+    margin-left: auto;
+  }
+  
+  &__captchaImg {
+    display: flex;
+    justify-content: center;
+  }
+}

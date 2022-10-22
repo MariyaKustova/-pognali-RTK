@@ -1,0 +1,19 @@
+@import '../../assets/BaseStyles/Mixins.module.scss';
+@import '../../assets/BaseStyles/variables.module.scss';
+
+.Dialogs {
+  &__Wrapper {
+    display: grid;
+    grid-template-columns: 3fr 9fr;
+  }
+  
+  &__List {
+    @include list-reset;
+    margin-right: 10px;
+  
+    li {
+      margin-bottom: 10px;
+    }
+  }
+}
+

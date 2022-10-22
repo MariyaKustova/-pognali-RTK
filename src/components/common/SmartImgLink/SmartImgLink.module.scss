@@ -1,0 +1,10 @@
+.SmartImgLink {
+  &:hover {
+    opacity: 0.7;
+  }
+
+  &__Img {
+    width: 30px;
+    height: 30px;
+  }
+}

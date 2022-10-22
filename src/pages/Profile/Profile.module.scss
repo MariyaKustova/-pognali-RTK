@@ -1,0 +1,156 @@
+@import '../../assets/BaseStyles/Variables.module.scss';
+@import '../../assets/BaseStyles/Mixins.module.scss';
+
+.Profile {
+  @include cardDesign;
+  justify-content: flex-start;
+  position: relative;
+
+  &__WrapperPhoto {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+  }
+  
+  &__Photo {
+    width: 300px;
+    height: 300px;
+    border-radius: 30px;
+    margin-right: 20px;
+  }
+  
+  &__InputFile {
+    display: none;
+  }
+  
+  &__Label {
+    font-size: 20px;
+    font-weight: 500;
+    width: 300px;
+    height: 300px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: flex;
+    align-items: end;
+    justify-content: center;
+    opacity: 0;
+  
+    &:hover {
+      opacity: 1;
+    }
+  }
+  
+  &__ShortInfo {
+    h2 {
+      margin-bottom: 5px;
+    }
+  
+    p {
+      @include small-text;
+      margin-top: 5px;
+      margin-bottom: 0;
+    }
+  }
+  
+  &__Header,
+  &__Job,
+  &__Info {
+    display: flex;
+  }
+  
+  &__Wrapper {
+    flex-grow: 1;
+    min-height: 300px;
+  }
+  
+  &__ShortInfo,
+  &__Job,
+  &__About,
+  &__Contacts {
+    width: calc((100% - 20px)/2);
+    min-height: 150px;
+    box-sizing: border-box;
+  }
+  
+  &__Job {
+    padding-right: 35px;
+  }
+  
+  &__ShortInfo,
+  &__About {
+    margin-right: 20px;
+  }
+  
+  &__JobIcon {
+    width: 75px;
+    height: 75px;
+    margin-right: 10px;
+  }
+  
+  &__About {
+    h4 {
+      margin-top: 0;
+      margin-bottom: 5px
+    }
+  
+    p {
+      margin: 0
+    }
+  }
+  
+  &__Contacts {
+    display: flex;
+    justify-content: flex-end;
+  
+    ul {
+      @include list-reset;
+      display: flex;
+      margin-top: auto;
+  
+      li:not(:last-child) {
+        margin-right: 7px;
+      }
+    }
+  }
+  
+  &__EditWrapper {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+  }
+  
+  &__ButtonEdit {
+    background-color: $light-gold;
+    border-radius: 50%;
+    border: none;
+    width: 30px;
+    height: 30px;
+  
+    &:hover {
+      background-color: $mango;
+    }
+  
+    &:hover + div {
+      display: block;
+    }
+  }
+  
+  &__IconEdit {
+    width: 15px;
+    position: absolute;
+    top: 12px;
+    left: 8px;
+  }
+  
+  &__Tooltip {
+    position: absolute;
+    display: none;
+    top: -35px;
+    right: -5px;
+    font-size: 16px;
+    width: 100px;
+    background-color: $dark-blue-grey;
+  }
+}

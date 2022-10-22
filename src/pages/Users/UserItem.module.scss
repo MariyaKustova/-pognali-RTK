@@ -1,0 +1,78 @@
+@import '../../assets/BaseStyles/Mixins.module.scss';
+@import '../../assets/BaseStyles/Variables.module.scss';
+
+.UserItem {
+  @include cardDesign;
+
+  &:hover {
+    background-color: $dark-blue-grey;
+
+    &__Name {
+      text-decoration: underline;
+    }
+  }
+
+  &__ShortInfo {
+    display: flex;
+    align-items: center;
+  }
+
+  &__Wrapper {
+    display: flex;
+    flex-direction: column;
+    margin-right: 20px;
+    padding-bottom: 24px;
+    position: relative;
+  }
+
+  &__Img {
+    width: 75px;
+    height: 75px;
+    border-radius: 50%;
+  }
+
+  &__Button {
+    position: absolute;
+    top: 65px;
+    right: -10px;
+  }
+
+  &__Name {
+    margin-top: 12px;
+    @include medium-text();
+  }
+
+  &__Text {
+    margin: 12px 0;
+  }
+
+  &__Location {
+    min-width: 150px;
+  }
+
+  &__Link {
+    color: $light-gold;
+    text-decoration: none;
+    width: 100%;
+  }
+
+  &__MessageWrapper {
+    height: calc(100% - 32px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-sizing: border-box;
+  }
+
+  &__Message {
+    text-align: center;
+    opacity: 0.5;
+    @include bold-text;
+  }
+
+  &__WrapperPagination {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 15px;
+  }
+}

@@ -1,0 +1,33 @@
+@import '../../../assets/BaseStyles/Variables.module.scss';
+@import '../../../assets/BaseStyles/Mixins.module.scss';
+
+.TextArea {
+  width: auto;
+  background-color: transparent;
+  border-radius: 10px;
+  border: 2px solid $light-gold;
+  padding: 15px;
+  margin-bottom: 15px;
+  @include light-text;
+  color: $light-gold;
+
+  &:hover,
+  &:focus {
+    border: 2px solid $mango;
+  }
+
+  &__Wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+  }
+
+  &__errorTextArea {
+    border-color: $mango;
+  }
+
+  &__Button {
+    @include light-text;
+    margin-left: auto;
+  }
+}

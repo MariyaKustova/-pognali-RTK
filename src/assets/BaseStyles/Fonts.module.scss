@@ -1,0 +1,43 @@
+@font-face {
+  font-family: "BloggerSans-Bold";
+  font-style: normal;
+  font-weight: bold;
+  font-display: swap;
+  src: local("Blogger Sans Bold"),
+    local("BloggerSans-Bold"),
+    url("./fonts/bloggersans-bold.woff2") format("woff2"),
+    url("./fonts/bloggersans-bold.woff") format("woff");
+}
+
+@font-face {
+  font-family: "BloggerSans-Light";
+  font-style: normal;
+  font-weight: 300;
+  font-display: swap;
+  src: local("Blogger Sans Light"),
+    local("BloggerSans-Light"),
+    url("./fonts/bloggersans-light.woff2") format("woff2"),
+    url("./fonts/bloggersans-light.woff") format("woff");
+}
+
+@font-face {
+  font-family: "BloggerSans-Medium";
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: local("Blogger Sans Medium"),
+    local("BloggerSans-Medium"),
+    url("./fonts/bloggersans-medium.woff2") format("woff2"),
+    url("./fonts/bloggersans-medium.woff") format("woff");
+}
+
+@font-face {
+  font-family: "BloggerSans";
+  font-style: normal;
+  font-weight: normal;
+  font-display: swap;
+  src: local("Blogger Sans"),
+    local("BloggerSans"),
+    url("./fonts/bloggersans.woff2") format("woff2"),
+    url("./fonts/bloggersans.woff") format("woff");
+}

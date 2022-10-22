@@ -1,0 +1,15 @@
+@import './assets/BaseStyles/Fonts.module.scss';
+@import './assets/BaseStyles/Variables.module.scss';
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: "BloggerSans", "Arial", sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+
+  color: $white;
+  min-width: $mobile-width;
+  position: relative;
+  background-color: $dark-two;
+}

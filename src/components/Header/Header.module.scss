@@ -1,0 +1,61 @@
+@import '../../assets/BaseStyles/Variables.module.scss';
+@import '../../assets/BaseStyles/Mixins.module.scss';
+
+.Header {
+  position: sticky;
+  top: 0;
+  background-color: $dark-blue-grey;
+  border-bottom-left-radius: 40px;
+  border-bottom-right-radius: 40px;
+  margin-bottom: 20px;
+  z-index: 1;
+
+  &__Wrapper {
+    @include wrapper;
+    padding: 40px 30px 10px;
+    display: flex;
+    justify-content: space-between;
+  
+    &__Text,
+    a {
+      @include link;
+      font-size: 24px;
+      color: $white;
+  
+      &:hover,
+      &:focus {
+        color: $mango;
+      }
+    }
+  }
+  
+  &__Login {
+    display: flex;
+    align-items: center;
+  }
+  
+  &__Img {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    margin-right: 5px;
+  }
+  
+  &__rightContent {
+    display: flex;
+    align-items: center;
+  }
+  
+  &__btnLogout {
+    @include light-text;
+    color: $white;
+    background-color: transparent;
+    border: none;
+    margin-right: 15px;
+  
+    &:hover,
+    &:focus {
+      color: $mango;
+    }
+  }
+}

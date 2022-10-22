@@ -1,0 +1,27 @@
+@import '../../../../assets/BaseStyles/Variables.module.scss';
+
+.DialogItem {
+  &__Link {
+    color: $light-gold;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+  
+    &:hover {
+      color: $mango;
+    }
+  }
+  
+  &__LinkActive {
+    color: $mango;
+    display: flex;
+    align-items: center;
+  }
+
+  &__Img {
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    margin-right: 10px;
+  }
+}

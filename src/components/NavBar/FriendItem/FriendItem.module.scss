@@ -1,0 +1,27 @@
+@import '../../../assets/BaseStyles/Fonts.module.scss';
+@import '../../../assets/BaseStyles/Variables.module.scss';
+@import '../../../assets/BaseStyles/Mixins.module.scss';
+
+.FriendItem {
+  @include light-text-link;
+  text-decoration: none;
+  max-width: 75px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  color: inherit;
+
+  &:hover {
+    color: $light-gold;
+  }
+
+  &__name {
+    &::before {
+      content: '';
+      display: block;
+      width: 15px;
+      height: 15px;
+      background-color: $light-gold;
+      border-radius: 50%;
+    }
+  }
+}

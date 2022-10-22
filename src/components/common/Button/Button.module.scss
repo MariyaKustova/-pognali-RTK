@@ -1,0 +1,28 @@
+@import '../../../assets/BaseStyles/Variables.module.scss';
+@import '../../../assets/BaseStyles/Fonts.module.scss';
+
+.Button {
+  padding: 5px 10px;
+  min-width: 100px;
+  background-color: $light-gold;
+  border: none;
+  border-radius: 10px;
+  font-family: "BloggerSans-Light";
+  font-size: 20px;
+  line-height: 24px;
+  color: $dark-two;
+
+  &:hover,
+  &:focus {
+    background-color: $mango;
+  }
+
+  &:disabled {
+    opacity: 0.7;
+
+    &:hover,
+    &:focus {
+      background-color: $light-gold;
+    }
+  }
+}

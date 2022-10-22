@@ -1,0 +1,12 @@
+@import '../../../../../assets/BaseStyles/Variables.module.scss';
+@import '../../../../../assets/BaseStyles/Fonts.module.scss';
+@import '../../../../../assets/BaseStyles/Mixins.module.scss';
+
+.Post {
+  @include light-text();
+
+  &__Img {
+    border-radius: 30px;
+    width: 80px;
+  }
+}

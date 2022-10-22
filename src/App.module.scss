@@ -1,0 +1,17 @@
+@import './assets/BaseStyles/Variables.module.scss';
+@import './assets/BaseStyles/Mixins.module.scss';
+
+.App {
+  &__Wrapper {
+    display: grid;
+    grid-template-areas: "nav content";
+    grid-template-columns: 3fr 9fr;
+    @include wrapper;
+  }
+
+  &__Content {
+    grid-area: content;
+    padding: 0 30px;
+    position: relative;
+  }
+}

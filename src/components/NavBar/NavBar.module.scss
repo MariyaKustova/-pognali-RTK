@@ -1,0 +1,59 @@
+@import '../../assets/BaseStyles/Variables.module.scss';
+@import '../../assets/BaseStyles/Mixins.module.scss';
+
+.NavBar {
+  grid-area: nav;
+  padding: 30px;
+  background-color: $mango;
+  border-radius: 40px;
+  margin-left: 30px;
+  min-height: 750px;
+
+  ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  li:not(:last-child) {
+    margin-bottom: 15px;
+  }
+
+  li:last-child {
+    margin-top: 40px;
+  }
+
+  &__Link,
+  &__ActiveLink {
+    @include link;
+    font-family: "BloggerSans-Medium";
+    color: $dark-blue-grey;
+
+    &:hover {
+      color: $light-gold;
+    }
+  }
+
+  &__FriendsSection {
+    @include light-text-link;
+    color: $dark-blue-grey;
+  }
+
+  &__ActiveLink {
+    text-decoration: underline;
+  }
+
+  &__Title {
+    @include light-text-link;
+    margin-bottom: 10px;
+  }
+
+  &__TitleNotActive {
+    color: $dark-blue-grey-70;
+  }
+
+  &__Wrapper {
+    display: flex;
+    justify-content: space-between;    
+  }
+}

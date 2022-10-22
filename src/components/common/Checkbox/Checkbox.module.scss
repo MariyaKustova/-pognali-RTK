@@ -1,0 +1,70 @@
+@import '../../../assets/BaseStyles/Mixins.module.scss';
+@import '../../../assets/BaseStyles/Variables.module.scss';
+
+.Checkbox {
+  margin-bottom: 15px;
+
+  &__control {
+    display: block;
+    width: 40px;
+    height: 40px;
+    box-sizing: border-box;
+    background-color: transparent;
+    border-radius: 5px;
+    border: 2px solid $light-gold;
+    padding: 5px;
+    position: relative;
+  
+    &::before {
+      content: '';
+      display: none;
+      width: 2px;
+      height: 21px;
+      background-color: $light-gold;
+      position: absolute;
+      top: 7px;
+      left: 22px;
+      rotate: 45deg;
+    }
+  
+    &::after {
+      content: '';
+      display: none;
+      width: 2px;
+      height: 13px;
+      background-color: $light-gold;
+      position: absolute;
+      top: 15px;
+      left: 10px;
+      rotate: -44deg;
+    }
+  }
+  
+  &__input {
+    display: none;
+  
+    &:hover+span,
+    &:focus+span,
+    &:focus-visible+span {
+      border: 2px solid $mango;
+  
+      &::after,
+      &::before {
+        background-color: $mango;
+      }
+    }
+  
+    &:checked + span {
+      &::after,
+      &::before {
+        display: block;
+      }
+    }
+  }
+  
+  &__label {
+    font-size: 24px;
+    line-height: 36px;
+    font-family: "BloggerSans";
+  }
+}

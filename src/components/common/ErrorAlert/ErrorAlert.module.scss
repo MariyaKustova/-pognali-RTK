@@ -1,0 +1,17 @@
+@import "../../../assets/BaseStyles/Variables.module.scss";
+@import "../../../assets/BaseStyles/Mixins.module.scss";
+
+.ErrorAlert {
+  padding: 30px;
+  background-color: $dark-blue-grey;
+  border: 2px solid $mango;
+  border-radius: 15px;
+  @include medium-text;
+  text-align: center;
+  position: absolute;
+  top: 0;
+  z-index: 1;
+  width: calc(100% - 60px);
+  box-sizing: border-box;
+  left: 30px;;
+}

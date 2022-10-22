@@ -1,0 +1,32 @@
+@import '../../../../assets/BaseStyles/Variables.module.scss';
+@import '../../../../assets/BaseStyles/Mixins.module.scss';
+
+.ProfileStatus {
+  position: relative;
+  @include small-text;
+
+  &__Owner {
+    cursor: pointer;
+  }
+  
+  &__Hint {
+    @include small-text;
+    margin-bottom: 5px;
+  }
+  
+  &__Modal {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    width: 400px;
+    padding: 15px;
+    border-radius: 10px;
+    background-color: $dark-blue-grey;
+    border: 0.5px solid grey;
+  }
+  
+  &__input {
+    width: 100%;
+  }
+}

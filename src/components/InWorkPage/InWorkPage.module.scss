@@ -1,0 +1,11 @@
+.InWorkPage {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  &__Title {
+    text-align: center;
+    opacity: 0.5;
+  }
+}
