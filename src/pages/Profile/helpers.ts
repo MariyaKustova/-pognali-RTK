@@ -37,7 +37,7 @@ export const getIcon = (key: string) => {
 
 export const checkRequired = (
   values: ProfileFormValues | LoginFormValues,
-  errors: { [key: string]: string },
+  errors: Record<string, string>,
   code: string
 ) => {
   const parameterName = get(values, code);
@@ -63,7 +63,7 @@ const isValidEmail = (fieldValue: string) => {
 
 export const checkEmail = (
   values: LoginFormValues | Contacts,
-  errors: { [key: string]: string },
+  errors: Record<string, string>,
   code: string
 ) => {
   const fieldValue = get(values, code);
@@ -74,11 +74,11 @@ export const checkEmail = (
 
 export const checkCorrectEmail = (
   values: Contacts,
-  errors: { contacts?: { [key: string]: string } },
+  errors: { contacts?: Record<string, string> },
   code: string
 ) => {
   const fieldValue = get(values, code);
-  const contacts: { [key: string]: string } = {};
+  const contacts: Record<string, string> = {};
 
   if (isValidEmail(fieldValue)) {
     contacts[code] = `${capitalizeFirstLetter(code)} must be a valid email`;

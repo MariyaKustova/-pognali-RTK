@@ -12,9 +12,9 @@ import { checkCorrectEmail, checkRequired } from "../../helpers";
 import s from "./ProfileInfoForm.module.scss";
 
 export const validateValues = (values: ProfileFormValues) => {
-  const errors = {};
+  const errors: Record<string, string> = {};
   BASE_INFO.forEach((code) => checkRequired(values, errors, code));
-  CONTACTS.forEach((code) => checkCorrectEmail(values.contacts, errors, code));  
+  CONTACTS.forEach((code) => checkCorrectEmail(values.contacts, errors, code));
   return { values, errors };
 };
 

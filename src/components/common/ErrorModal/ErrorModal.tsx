@@ -1,9 +1,11 @@
 import React, { FC, useCallback, useState } from "react";
+import { SerializedError } from "@reduxjs/toolkit";
+import { FetchBaseQueryError } from "@reduxjs/toolkit/dist/query";
 
 import s from "./ErrorModal.module.scss";
 
 interface ErrorModalProps {
-  error: any;
+  error: FetchBaseQueryError | SerializedError;
   isOpen: boolean;
   onClick?: () => void;
 }
@@ -21,7 +23,7 @@ const ErrorModal: FC<ErrorModalProps> = ({ error, isOpen, onClick }) => {
         <div className={s.ErrorModal} onClick={hideModal}>
           <div className={s.ErrorModal__Modal}>
             <h1>Error!</h1>
-            <p>{error.error}</p>
+            <p>{'error' in error ? error.error : null}</p>
           </div>
         </div>
       ) : null}

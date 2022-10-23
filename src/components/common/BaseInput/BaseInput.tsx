@@ -1,11 +1,8 @@
 import React, { ForwardedRef } from "react";
 import classnames from "classnames";
-import { has } from "lodash";
+import { FieldError } from "react-hook-form";
 
-import {
-  capitalizeFirstLetter,
-  editName,
-} from "../../../utils";
+import { capitalizeFirstLetter, editName } from "../../../utils";
 import ErrorMessage from "../ErrorMessage/ErrorMessage";
 
 import s from "./BaseInput.module.scss";
@@ -17,7 +14,7 @@ interface BaseInputProps {
   type?: string;
   className?: string;
   onBlur?: () => void;
-  error?: any;
+  error?: FieldError | string;
   invalid?: boolean;
   isDirty?: boolean;
   isTouched?: boolean;
@@ -37,7 +34,7 @@ const BaseInput = React.forwardRef(
       onChange,
       invalid,
       autoFocus,
-    } = props;    
+    } = props;
 
     return (
       <div className={classnames(s.BaseInput, className)}>
@@ -49,7 +46,7 @@ const BaseInput = React.forwardRef(
           )}
           <input
             type={type || "text"}
-            value={value || ''}
+            value={value || ""}
             onBlur={onBlur}
             onChange={onChange}
             className={classnames(s.BaseInput__input, {
@@ -60,11 +57,7 @@ const BaseInput = React.forwardRef(
           />
         </label>
         {error && (
-          <ErrorMessage
-            message={capitalizeFirstLetter(
-              has(error, "message") ? error.message : error
-            )}
-          />
+          <ErrorMessage message={error} />
         )}
       </div>
     );

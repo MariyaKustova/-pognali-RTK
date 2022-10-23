@@ -4,7 +4,7 @@ import { DialogFormValues } from "./types";
 
 export const checkMessageLength = (
   values: DialogFormValues,
-  errors: {[key: string]: string},
+  errors: Record<string, string>,
   code: string
 ) => {
   const parameterName = get(values, code);
@@ -16,7 +16,7 @@ export const checkMessageLength = (
 };
 
 export const validateMessage = (values: DialogFormValues) => {
-const errors = {};
+const errors: Record<string, string> = {};
 checkMessageLength(values, errors, 'newMessage')
 return { values, errors };
 };

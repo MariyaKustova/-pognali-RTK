@@ -1,18 +1,23 @@
-import React, { FC } from "react";
-import _ from 'lodash';
+import React, { FC, useMemo } from "react";
+import { FieldError } from "react-hook-form";
 
-import s from './ErrorMessage.module.scss';
+import { capitalizeFirstLetter } from "../../../utils";
+
+import s from "./ErrorMessage.module.scss";
 
 interface ErrorMessageProps {
-  message: any;
+  message: FieldError | string;
 }
 
 const ErrorMessage: FC<ErrorMessageProps> = ({ message }) => {
-  return (
-    <div className={s.ErrorMessage}>
-      {_.has(message, 'error') ? message.error : message}
-    </div>
-  );
+  const errorMessage = useMemo(() => {
+      if (typeof message === "string") {
+        return message;
+      }
+      return message.message;
+  }, [message]);
+
+  return errorMessage ? <div className={s.ErrorMessage}>{capitalizeFirstLetter(errorMessage)}</div> : null;
 };
 
 export default ErrorMessage;

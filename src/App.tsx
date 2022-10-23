@@ -66,7 +66,7 @@ const App: () => JSX.Element = () => {
           </Suspense>
         </div>
       </div>
-      <ErrorModal error={error} isOpen={!!error} />
+      {error && <ErrorModal error={error} isOpen={!!error} />}
     </Fragment>
   );
 };

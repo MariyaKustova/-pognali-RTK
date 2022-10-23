@@ -8,7 +8,7 @@ import { LoginFormValues } from "./types";
 export const createController = (
   name: string,
   control: Control<any>,
-  props?: { [key: string]: string }
+  props?: Record<string, string>
 ) => (
   <Controller
     name={name}
