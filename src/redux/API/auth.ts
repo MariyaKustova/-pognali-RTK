@@ -28,8 +28,10 @@ export const authAPI = createApi({
           const { data } = await queryFulfilled;
           if (data.resultCode === 0)
             dispatch(setAuthState({ ...data?.data, isAuth: true }));
-        } catch (err) {
-          console.warn(err);
+        } catch (error) {
+          if (error instanceof Error) {
+            console.warn(error.message);
+          }
         }
       },
     }),
@@ -37,7 +39,7 @@ export const authAPI = createApi({
       query: () => ({
         url: ENDPOINTS.GET_CAPTCHA,
       }),
-      transformResponse: (response: {url: string}) => response.url,
+      transformResponse: (response: { url: string }) => response.url,
     }),
     login: build.mutation<ResponseDataBase<ResponseLogin>, requestLoginData>({
       query: (requestData) => ({
