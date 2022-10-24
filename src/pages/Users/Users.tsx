@@ -86,7 +86,7 @@ const Users = () => {
         <>
           {error && (
             <ErrorAlert
-              error={usersError || followError || unfollowError}
+              error={error}
               resetError={() => setError(undefined)}
             />
           )}
