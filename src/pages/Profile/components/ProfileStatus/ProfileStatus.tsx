@@ -23,7 +23,7 @@ interface ProfileStatusProps {
 
 const ProfileStatus: FC<ProfileStatusProps> = ({ userId, setError }) => {
   const auth = useSelector((state: State) => getAuth(state));
-  const { data: status, error: getStatusError } = useGetStatusQuery(userId);
+  const { data: status, error: queryStatusError } = useGetStatusQuery(userId);
   const [updateUserStatus] = useUpdateStatusMutation();
 
   const [userStatus, setUserStatus] = useState<string>(status || "");
@@ -36,10 +36,10 @@ const ProfileStatus: FC<ProfileStatusProps> = ({ userId, setError }) => {
   }, [status]);
 
   useEffect(() => {
-    if (getStatusError) {
-      setError(getStatusError);
+    if (queryStatusError) {
+      setError(queryStatusError);
     }
-  }, [getStatusError, setError]);
+  }, [queryStatusError, setError]);
 
   const onToggleEditMode = useCallback(() => {
     setEditMode((prevState) => !prevState);
@@ -60,7 +60,7 @@ const ProfileStatus: FC<ProfileStatusProps> = ({ userId, setError }) => {
     >
       {editMode && isOwner ? (
         <div className={s.ProfileStatus__Modal}>
-          <span className={s.ProfileStatus__Hint}>Введите ваш статус</span>
+          <span className={s.ProfileStatus__Hint}>Input your status</span>
           <BaseInput
             value={userStatus}
             onBlur={onChangeStatus}
@@ -70,7 +70,7 @@ const ProfileStatus: FC<ProfileStatusProps> = ({ userId, setError }) => {
         </div>
       ) : (
         <div onClick={onToggleEditMode}>
-          {status || isOwner ? "Установите ваш статус" : ""}
+          {status || isOwner ? "Set your status" : ""}
         </div>
       )}
     </div>

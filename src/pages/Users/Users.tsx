@@ -16,6 +16,7 @@ import {
 import s from "./UserItem.module.scss";
 
 const PAGE_SIZE = 5;
+const FIRST_PAGE = 1;
 
 const styles = {
   color: "#192144",
@@ -38,7 +39,7 @@ const styles = {
 };
 
 const Users = () => {
-  const [currentPage, setCurrentPage] = useState<number>(1);
+  const [currentPage, setCurrentPage] = useState<number>(FIRST_PAGE);
 
   const { items, totalCount, isFetching, isLoading, usersError } =
     useGetUsersQuery(

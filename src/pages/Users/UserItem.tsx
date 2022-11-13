@@ -31,7 +31,7 @@ const UserItem: FC<UserItemProps> = ({
             <img
               className={s.UserItem__Img}
               src={photos.small ?? IconUser}
-              alt="Аватар пользователя"
+              alt="User's avatar"
             />
 
             {followed ? (
@@ -57,16 +57,16 @@ const UserItem: FC<UserItemProps> = ({
           <div>
             <h3 className={s.UserItem__Name}>{name}</h3>
             <p className={s.UserItem__Text}>
-              {status ?? "Очень скоро здесь появится статус"}
+              {status ?? "The status will appear here very soon"}
             </p>
           </div>
         </div>
         <div className={s.UserItem__Location}>
           <p className={s.UserItem__Text}>
-            {location?.country ?? "Страна не указана"}
+            {location?.country ?? "Country not specified"}
           </p>
           <p className={s.UserItem__Text}>
-            {location?.city ?? "Город не указан"}
+            {location?.city ?? "The city is not specified"}
           </p>
         </div>
       </NavLink>

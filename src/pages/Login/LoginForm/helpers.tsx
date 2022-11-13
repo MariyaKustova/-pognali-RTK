@@ -22,6 +22,11 @@ export const createController = (
 export const validateValues = (values: LoginFormValues) => {
   const errors = {};
   checkRequired(values, errors, FieldNames.PASSWORD);
-  checkEmail(values, errors, FieldNames.EMAIL);
-  return {values, errors}
-}
+  if (values[FieldNames.EMAIL]) {
+    checkRequired(values, errors, FieldNames.EMAIL);
+  } else {
+    checkEmail(values, errors, FieldNames.EMAIL);
+  }
+
+  return { values, errors };
+};
