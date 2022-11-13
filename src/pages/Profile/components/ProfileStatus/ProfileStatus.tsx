@@ -70,7 +70,7 @@ const ProfileStatus: FC<ProfileStatusProps> = ({ userId, setError }) => {
         </div>
       ) : (
         <div onClick={onToggleEditMode}>
-          {status || isOwner ? "Set your status" : ""}
+          {status || isOwner ? "Set your status please" : ""}
         </div>
       )}
     </div>
